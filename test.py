@@ -82,6 +82,6 @@ class Tests():
 if __name__ == '__main__':
     tests = Tests()
     #tests.test_deligan_baseline('../models/gan_models/baseline/deligan/image/generator.model')
-    tests.test_deligan_final('../models/gan_models/final/image/generator.model',
-                       '../models/eeg_models/image/run_final.h5',
-                       '../data/eeg/image/data.pkl')
+    tests.test_deligan_final('models/gan_models/final/image/generator.model',
+                       'models/eeg_models/image/run_final.h5',
+                       'data/eeg/image/data.pkl')

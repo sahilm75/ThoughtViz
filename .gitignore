@@ -1,0 +1,13 @@
+*.h5
+*.pkl
+*.png
+*.JPEG
+*.index
+*.pb
+*.pyc
+training/models
+eeg_char_classification
+eeg_digit_classification
+eeg_image_classification
+images
+saved_models
