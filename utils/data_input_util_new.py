@@ -80,7 +80,7 @@ def load_image_data(imagenet_folder, patch_size):
             file_path = os.path.join(imagenet_folder, image_folder, image_file)
             img = Image.open(file_path).convert('RGB').resize(patch_size, PIL.Image.LANCZOS)
             img_array = np.array(img)
-            img_array = img_array/255.0
+            img_array = (img_array-127.5)/127.5
             images.append(img_array)
             labels.append(image_class)
             images.append(np.flip(img_array, 1))

@@ -6,7 +6,7 @@ from keras.optimizers import Adam
 
 import utils.data_input_util as inutil
 from training.models.deligan import *
-from utils.eval_utils import *
+# from utils.eval_utils import *
 from utils.image_utils import *
 
 
@@ -98,12 +98,12 @@ def train_gan(input_noise_dim, batch_size, epochs, model_save_dir, output_dir):
         test_images = g.predict(conditioned_noise_test, verbose=0)
         test_images = test_images * 255.0
         
-        if epoch % 100 == 0:        
-            inception_score = get_inception_score([test_image for test_image in test_images], splits=10)
+        # if epoch % 100 == 0:        
+        #     inception_score = get_inception_score([test_image for test_image in test_images], splits=10)
 
         print("Epoch %d d_loss : %f" % (epoch, d_loss))
         print("Epoch %d g_loss : %f" % (epoch, g_loss[0]))
-        print("Epoch %d inception_score : %f" % (epoch, inception_score[0]))
+        # print("Epoch %d inception_score : %f" % (epoch, inception_score[0]))
 
         # save generator and discriminator models along with the weights
         g.save(os.path.join(model_save_dir, 'generator_' + str(epoch)), overwrite=True, include_optimizer=True)

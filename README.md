@@ -39,7 +39,7 @@ Implementation for the paper https://dl.acm.org/citation.cfm?doid=3240508.324064
 
       * Our Approach : Uses EEG encoding from the trained EEG classifier as conditioning. The encoding is used as weights in the MoGLayer
  
-**NOTE** : Currently we have uploaded only one baseline model and our final model. Other models can be obtained by running the training code. 
+**NOTE** : Currently we have uploaded only one baseline model and our final model. Other models can be obtained by running the training code.
 
 
 

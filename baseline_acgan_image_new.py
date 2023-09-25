@@ -4,8 +4,8 @@ from random import randint
 from PIL import Image
 from keras.optimizers import Adam
 
-import utils.data_input_util as inutil
-from training.models.ac_gan import *
+import utils.data_input_util_new as inutil
+from training.models.ac_gan_new import *
 # from utils.eval_utils import *
 from utils.image_utils import *
 from keras.utils import to_categorical
@@ -80,7 +80,7 @@ def train_gan(input_noise_dim, batch_size, epochs, model_save_dir, output_dir):
             # save generated images at intermediate stages of training
             if index % 250 == 0:
                 image = combine_rgb_images(generated_images)
-                image = image * 255.0
+                image = image * 127.5 + 127.5
                 img_save_path = os.path.join(output_dir, str(epoch) + "_g_" + str(index) + ".png")
                 Image.fromarray(image.astype(np.uint8)).save(img_save_path)
 
@@ -100,7 +100,7 @@ def train_gan(input_noise_dim, batch_size, epochs, model_save_dir, output_dir):
         conditioned_noise_test = np.array(conditioned_noise_test)
 
         test_images = g.predict(conditioned_noise_test, verbose=0)
-        test_images = test_images * 255.0
+        test_images = test_images * 127.5 + 127.5
         
         # if epoch % 10 == 0:        
         #     inception_score = get_inception_score([test_image for test_image in test_images], splits=10)

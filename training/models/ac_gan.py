@@ -1,10 +1,9 @@
 import keras
 from keras.layers import Dense, Flatten, MaxPooling2D
-from keras.layers import Reshape, LeakyReLU, Dropout
+from keras.layers import Reshape, LeakyReLU, Dropout, BatchNormalization
 from keras.layers.convolutional import Conv2D, UpSampling2D
 from keras.layers.convolutional import Conv2DTranspose
 from keras.layers.core import Activation
-from keras.layers.normalization import BatchNormalization
 from keras.models import Model
 
 
